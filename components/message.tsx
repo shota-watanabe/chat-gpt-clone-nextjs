@@ -1,9 +1,5 @@
 // ユーザーが送信したメッセージと AI が返答したメッセージを表示するためのコンポーネント
-export const Message = ({
-  message,
-}: {
-  message: any;
-}) => {
+export const Message = ({ message }: { message: any }) => {
   return (
     <div
       className="w-full mx-auto max-w-3xl px-4 group/message"
