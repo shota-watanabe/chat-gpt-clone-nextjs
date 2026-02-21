@@ -1,4 +1,6 @@
 // ユーザーが送信したメッセージと AI が返答したメッセージを表示するためのコンポーネント
+import { Markdown } from "./markdown";
+
 export const Message = ({ message }: { message: any }) => {
   return (
     <div
@@ -21,7 +23,7 @@ export const Message = ({ message }: { message: any }) => {
                         : ""
                     }`}
                   >
-                    {part.text}
+                    <Markdown>{part.text}</Markdown>
                   </div>
                 </div>
               );

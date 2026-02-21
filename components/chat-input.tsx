@@ -32,6 +32,18 @@ export function ChatInput({
           autoFocus
           onChange={(e) => setInput(e.target.value)}
           value={input}
+          onKeyDown={(event) => {
+            if (
+              event.key === "Enter" &&
+              !event.shiftKey &&
+              !event.nativeEvent.isComposing
+            ) {
+              event.preventDefault();
+              if (status === "ready") {
+                handleSubmit();
+              }
+            }
+          }}
         />
         <div className="absolute bottom-0 right-0 p-2 w-fit flex flex-row justify-end">
           <button className="rounded-full p-1.5 h-fit border dark:border-zinc-600">
